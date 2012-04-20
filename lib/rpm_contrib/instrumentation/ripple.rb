@@ -11,8 +11,7 @@ DependencyDetection.defer do
   end
 
   executes do
-    (defined?(::Ripple::Callbacks::InstanceMethods) ? 
-      ::Ripple::Callbacks::InstanceMethods : ::Ripple::Callbacks).class_eval do
+    ::Ripple::Callbacks.class_eval do
       add_method_tracer :valid?, 'Database/Riak/Ripple/valid?'
     end
 
